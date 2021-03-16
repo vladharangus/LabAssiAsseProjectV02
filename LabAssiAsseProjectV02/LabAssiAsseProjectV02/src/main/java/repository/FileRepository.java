@@ -1,11 +1,11 @@
-package main.java.repository;
+package repository;
 
 /**
  * CRUD operations file repository interface
  * @param <ID> - type E must have an attribute of type ID
  * @param <E> - type of entities saved in repository
  */
-public interface FileRepository<ID, E extends main.java.repository.HasID<ID>> {
+public interface FileRepository<ID, E extends repository.HasID<ID>> {
 
     /**
      * Incarca datele din fisier

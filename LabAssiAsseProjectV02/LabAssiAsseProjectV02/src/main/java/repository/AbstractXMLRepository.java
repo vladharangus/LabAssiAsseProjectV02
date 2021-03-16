@@ -1,7 +1,7 @@
-package main.java.repository;
+package repository;
 
-import main.java.domain.Student;
-import main.java.validation.ValidationException;
+import domain.Student;
+import validation.ValidationException;
 import java.io.*;
 import java.util.Optional;
 

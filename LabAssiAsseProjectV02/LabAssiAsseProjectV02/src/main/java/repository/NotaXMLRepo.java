@@ -1,8 +1,8 @@
-package main.java.repository;
+package repository;
 
-import main.java.domain.Nota;
+import domain.Nota;
 import java.time.LocalDate;
-import main.java.domain.Nota;
+import domain.Nota;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

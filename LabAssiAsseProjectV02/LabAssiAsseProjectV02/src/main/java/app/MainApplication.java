@@ -1,15 +1,19 @@
-package main.java.app;
+package app;
 
-
-
-
-
+import repository.NotaXMLRepo;
+import repository.StudentXMLRepo;
+import repository.TemaXMLRepo;
+import service.Service;
+import validation.NotaValidator;
+import validation.StudentValidator;
+import validation.TemaValidator;
+import view.UI;
 
 public class MainApplication {
 
     public static void main(String[] args) {
-        main.java.validation.StudentValidator studentValidator = new main.java.validation.StudentValidator();
-        main.java.validation.TemaValidator temaValidator = new main.java.validation.TemaValidator();
+        StudentValidator studentValidator = new StudentValidator();
+        TemaValidator temaValidator = new TemaValidator();
         String filenameStudent = "fisiere/Studenti.xml";
         String filenameTema = "fisiere/Teme.xml";
         String filenameNota = "fisiere/Note.xml";
@@ -19,12 +23,12 @@ public class MainApplication {
         //NotaValidator notaValidator = new NotaValidator(studentFileRepository, temaFileRepository);
         //NotaFileRepository notaFileRepository = new NotaFileRepository(filenameNota);
 
-        main.java.repository.StudentXMLRepo studentXMLRepository = new main.java.repository.StudentXMLRepo(filenameStudent);
-        main.java.repository.TemaXMLRepo temaXMLRepository = new main.java.repository.TemaXMLRepo(filenameTema);
-        main.java.validation.NotaValidator notaValidator = new main.java.validation.NotaValidator(studentXMLRepository, temaXMLRepository);
-        main.java.repository.NotaXMLRepo notaXMLRepository = new main.java.repository.NotaXMLRepo(filenameNota);
-        main.java.service.Service service = new main.java.service.Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
-        main.java.view.UI ui = new main.java.view.UI(service);
+        StudentXMLRepo studentXMLRepository = new StudentXMLRepo(filenameStudent);
+        TemaXMLRepo temaXMLRepository = new TemaXMLRepo(filenameTema);
+        NotaValidator notaValidator = new NotaValidator(studentXMLRepository, temaXMLRepository);
+        NotaXMLRepo notaXMLRepository = new NotaXMLRepo(filenameNota);
+        Service service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
+        UI ui = new UI(service);
         ui.run();
     }
 
