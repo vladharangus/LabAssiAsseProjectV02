@@ -110,12 +110,11 @@ public class UI {
         int grupa = scanner.nextInt();
         System.out.print("Introduceti email: ");
         String email = scanner.next();
-        Student student = new Student(idStudent, numeStudent, grupa, email);
-        Student student1 = service.addStudent(student);
+        Student student1 = service.addStudent(idStudent, numeStudent, grupa, email);
         if (student1 == null) {
             System.out.println("Student adaugat cu succes!");
         } else {
-            System.out.println("Studentul deja exista" + student1);
+            System.out.println("Eroare la adaugare" + student1);
         }
     }
 

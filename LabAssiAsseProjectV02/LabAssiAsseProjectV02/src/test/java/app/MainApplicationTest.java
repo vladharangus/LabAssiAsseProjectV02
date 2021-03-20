@@ -37,7 +37,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
 
-        Student s = service.addStudent(new Student("6", "name", 934, "mail"));
+        Student s = service.addStudent("1", "name", 934, "mail");
         assert(s.getNume().equals("name"));
     }
     @Test
@@ -49,7 +49,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
         try {
-            Student s = service.addStudent(new Student("1", null, 934, "mail"));
+            Student s = service.addStudent("2", null, 934, "mail");
         }catch (Exception e) {
             assert(e.getMessage().equals("Nume incorect!"));
         }
@@ -63,7 +63,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
 
-        Student s = service.addStudent(new Student("2", "name", 934, "mail"));
+        Student s = service.addStudent("3", "name", 934, "mail");
         assert(s.getGrupa() == 934);
     }
     @Test
@@ -75,7 +75,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
         try {
-            Student s = service.addStudent(new Student("3", "name", -3, "mail"));
+            Student s = service.addStudent("4", "name", -3, "mail");
         }catch (Exception e) {
             assert(e.getMessage().equals("Grupa incorecta!"));
         }
@@ -89,7 +89,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
 
-        Student s = service.addStudent(new Student("4", "name", 934, "mail"));
+        Student s = service.addStudent("5", "name", 934, "mail");
         assert(s.getEmail().equals("mail"));
     }
     @Test
@@ -101,7 +101,7 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
         try {
-            Student s = service.addStudent(new Student("6", "name", 934, null));
+            Student s = service.addStudent("6", "name", 934, null);
         }catch (Exception e) {
             assert(e.getMessage().equals("Email incorect!"));
         }

@@ -54,10 +54,14 @@ public class Service {
 
     /**
      * adauga un Student in memorie
-     * @param student - studentul pe care il adauga
+     * @param id - id-ul studentului pe care vrem sa il adaugam
+     * @param name - numele studentului pe care vrem sa il adaugam
+     * @param grupa - grupa studentului pe care vrem sa il adaugam
+     * @param email - email-ul studentului pe care vrem sa il adaugam
      * @return null daca studentul a fost adaugat cu succes sau studentul din memorie daca acesta exista deja
      */
-    public Student addStudent(Student student) {
+    public Student addStudent(String id, String name, int grupa, String email) {
+        Student student = new Student(id, name, grupa, email);
         studentValidator.validate(student);
         return studentFileRepository.save(student);
     }
