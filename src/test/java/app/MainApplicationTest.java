@@ -41,6 +41,7 @@ public class MainApplicationTest {
 
         Tema t = service.addTema(new Tema("2", "d1", 5, 1));
         assert(t.getDeadline() == 5);
+        service.deleteTema("2");
     }
     @Test
     public void tc_2_addAssignmentInvalidDeadline() {
@@ -51,8 +52,58 @@ public class MainApplicationTest {
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
 
-        Tema t = service.addTema(new Tema("2", "d1", 15, 1));
-        assert(t.getDeadline() == 15);
+        try{
+            Tema t = service.addTema(new Tema("2", "d1", 15, 1));
+        }catch (Exception e){
+            assert(e.getMessage().equals("Deadlineul trebuie sa fie intre 1-14."));
+        }
+    }
+    @Test
+    public void tc_3_addAssignmentInvalidId() {
+
+        studentXMLRepo = new StudentXMLRepo(filenameStudent);
+        temaXMLRepo = new TemaXMLRepo(filenameTema1);
+        notaXMLRepo = new NotaXMLRepo(filenameNota);
+        notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
+        service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
+
+        try{
+            Tema t = service.addTema(new Tema("", "d1", 5, 1));
+        }catch (Exception e){
+            assert(e.getMessage().equals("Numar tema invalid!"));
+        }
+
+    }
+    @Test
+    public void tc_4_addAssignmentInvalidDescription() {
+
+        studentXMLRepo = new StudentXMLRepo(filenameStudent);
+        temaXMLRepo = new TemaXMLRepo(filenameTema1);
+        notaXMLRepo = new NotaXMLRepo(filenameNota);
+        notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
+        service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
+
+        try{
+            Tema t = service.addTema(new Tema("2", "", 5, 1));
+        }catch (Exception e){
+            assert(e.getMessage().equals("Descriere invalida!"));
+        }
+
+    }
+    @Test
+    public void tc_5_addAssignmentInvalidTurnIn() {
+
+        studentXMLRepo = new StudentXMLRepo(filenameStudent);
+        temaXMLRepo = new TemaXMLRepo(filenameTema1);
+        notaXMLRepo = new NotaXMLRepo(filenameNota);
+        notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
+        service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
+        try{
+            Tema t = service.addTema(new Tema("2", "d1", 5, 0));
+        }catch (Exception e){
+            assert(e.getMessage().equals("Saptamana primirii trebuie sa fie intre 1-14."));
+        }
+
     }
     @Test
     public void tc_1_addStudentValidName() {
@@ -65,6 +116,7 @@ public class MainApplicationTest {
 
         Student s = service.addStudent("1", "name", 934, "mail");
         assert(s.getNume().equals("name"));
+        service.deleteStudent("1");
     }
     @Test
     public void tc_2_addStudentInvalidName() {
@@ -91,6 +143,7 @@ public class MainApplicationTest {
 
         Student s = service.addStudent("3", "name", 934, "mail");
         assert(s.getGrupa() == 934);
+        service.deleteStudent("3");
     }
     @Test
     public void tc_4_addStudentInvalidGroup() {
@@ -117,6 +170,7 @@ public class MainApplicationTest {
 
         Student s = service.addStudent("5", "name", 934, "mail");
         assert(s.getEmail().equals("mail"));
+        service.deleteStudent("5");
     }
     @Test
     public void tc_6_addStudentInvalidEmail() {
