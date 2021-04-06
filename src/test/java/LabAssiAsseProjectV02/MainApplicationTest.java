@@ -1,4 +1,4 @@
-package app;
+package LabAssiAsseProjectV02;
 
 
 import domain.Student;

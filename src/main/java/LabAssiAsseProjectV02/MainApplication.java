@@ -1,4 +1,4 @@
-package app;
+package LabAssiAsseProjectV02;
 
 import repository.NotaXMLRepo;
 import repository.StudentXMLRepo;

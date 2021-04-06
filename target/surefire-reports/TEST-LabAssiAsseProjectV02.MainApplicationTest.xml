@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="app.MainApplicationTest" time="0.366" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="LabAssiAsseProjectV02.MainApplicationTest" time="0.075" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-12.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Vlad\AppData\Local\Temp\surefire7886826105555735654\surefirebooter2339062488649403433.jar C:\Users\Vlad\AppData\Local\Temp\surefire7886826105555735654 2021-04-06T16-23-28_974-jvmRun1 surefire5833132843199733440tmp surefire_016045239531397116340tmp"/>
+    <property name="sun.java.command" value="C:\Users\Vlad\AppData\Local\Temp\surefire14436809909226342696\surefirebooter6859912637029888185.jar C:\Users\Vlad\AppData\Local\Temp\surefire14436809909226342696 2021-04-06T16-37-21_973-jvmRun1 surefire12148008672779198787tmp surefire_09458409137279380486tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Vlad\Desktop\GITHUB\LabAssiAsseProjectV02\target\test-classes;C:\Users\Vlad\Desktop\GITHUB\LabAssiAsseProjectV02\target\classes;C:\Users\Vlad\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Vlad\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="idea.version2020.1.1" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\Vlad\AppData\Local\Temp\surefire7886826105555735654\surefirebooter2339062488649403433.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Vlad\AppData\Local\Temp\surefire14436809909226342696\surefirebooter6859912637029888185.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="12.0.2+10"/>
@@ -59,15 +59,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="56.0"/>
   </properties>
-  <testcase name="tc_1_addStudentValidName" classname="app.MainApplicationTest" time="0.186"/>
-  <testcase name="tc_3_addAssignmentInvalidId" classname="app.MainApplicationTest" time="0.01"/>
-  <testcase name="tc_4_addAssignmentInvalidDescription" classname="app.MainApplicationTest" time="0.025"/>
-  <testcase name="tc_2_addAssignmentInvalidDeadline" classname="app.MainApplicationTest" time="0.006"/>
-  <testcase name="tc_1_addAssignmentValidDeadline" classname="app.MainApplicationTest" time="0.013"/>
-  <testcase name="tc_2_addStudentInvalidName" classname="app.MainApplicationTest" time="0.009"/>
-  <testcase name="tc_3_addStudentValidGroup" classname="app.MainApplicationTest" time="0.015"/>
-  <testcase name="tc_6_addStudentInvalidEmail" classname="app.MainApplicationTest" time="0.008"/>
-  <testcase name="tc_5_addStudentValidEmail" classname="app.MainApplicationTest" time="0.01"/>
-  <testcase name="tc_4_addStudentInvalidGroup" classname="app.MainApplicationTest" time="0.007"/>
-  <testcase name="tc_5_addAssignmentInvalidTurnIn" classname="app.MainApplicationTest" time="0.005"/>
+  <testcase name="tc_1_addStudentValidName" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.002"/>
+  <testcase name="tc_3_addAssignmentInvalidId" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.012"/>
+  <testcase name="tc_4_addAssignmentInvalidDescription" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.006"/>
+  <testcase name="tc_2_addAssignmentInvalidDeadline" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.005"/>
+  <testcase name="tc_1_addAssignmentValidDeadline" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.008"/>
+  <testcase name="tc_2_addStudentInvalidName" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.006"/>
+  <testcase name="tc_3_addStudentValidGroup" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.007"/>
+  <testcase name="tc_6_addStudentInvalidEmail" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.006"/>
+  <testcase name="tc_5_addStudentValidEmail" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.009"/>
+  <testcase name="tc_4_addStudentInvalidGroup" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.005"/>
+  <testcase name="tc_5_addAssignmentInvalidTurnIn" classname="LabAssiAsseProjectV02.MainApplicationTest" time="0.006"/>
 </testsuite>
