@@ -64,5 +64,35 @@ public class IntegrationTest {
 
     }
 
+    @Test
+    public void tc_1_Incremental() {
+
+
+        tc_1_addStudent();
+
+
+    }
+
+    @Test
+    public void tc_2_Incremental() {
+
+
+        tc_1_addStudent();
+        tc_1_addAssignment();
+
+
+    }
+
+    @Test
+    public void tc_3_Incremental() {
+
+        tc_1_addStudent();
+        tc_1_addAssignment();
+        tc_1_addGrade();
+
+    }
+
+
+
 
 }
