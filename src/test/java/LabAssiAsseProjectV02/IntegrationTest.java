@@ -36,7 +36,7 @@ public class IntegrationTest {
 
         Tema t = service.addTema(new Tema("2", "d1", 14, 1));
         assert(t.getDeadline() == 14);
-        //service.deleteTema("2");
+        //
     }
     @Test
     public void tc_1_addStudent() {
@@ -61,6 +61,9 @@ public class IntegrationTest {
         tc_1_addAssignment();
         tc_1_addStudent();
         tc_1_addGrade();
+        service.deleteTema("2");
+        service.deleteStudent("1");
+        service.deleteNota("1");
 
     }
 
@@ -69,7 +72,7 @@ public class IntegrationTest {
 
 
         tc_1_addStudent();
-
+        service.deleteStudent("1");
 
     }
 
@@ -79,7 +82,8 @@ public class IntegrationTest {
 
         tc_1_addStudent();
         tc_1_addAssignment();
-
+        service.deleteTema("2");
+        service.deleteStudent("1");
 
     }
 
@@ -89,6 +93,9 @@ public class IntegrationTest {
         tc_1_addStudent();
         tc_1_addAssignment();
         tc_1_addGrade();
+        service.deleteTema("2");
+        service.deleteStudent("1");
+        service.deleteNota("1");
 
     }
 
