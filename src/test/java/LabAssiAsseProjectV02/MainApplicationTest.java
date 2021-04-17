@@ -32,16 +32,14 @@ public class MainApplicationTest {
 
     @Test
     public void tc_1_addAssignmentValidDeadline() {
-
         studentXMLRepo = new StudentXMLRepo(filenameStudent);
         temaXMLRepo = new TemaXMLRepo(filenameTema1);
         notaXMLRepo = new NotaXMLRepo(filenameNota);
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
-
+        service.deleteTema("2");
         Tema t = service.addTema(new Tema("2", "d1", 5, 1));
         assert(t.getDeadline() == 5);
-        service.deleteTema("2");
     }
     @Test
     public void tc_2_addAssignmentInvalidDeadline() {
@@ -107,16 +105,14 @@ public class MainApplicationTest {
     }
     @Test
     public void tc_1_addStudentValidName() {
-
         studentXMLRepo = new StudentXMLRepo(filenameStudent);
         temaXMLRepo = new TemaXMLRepo(filenameTema);
         notaXMLRepo = new NotaXMLRepo(filenameNota);
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
-
+        service.deleteStudent("1");
         Student s = service.addStudent("1", "name", 934, "mail");
         assert(s.getNume().equals("name"));
-        service.deleteStudent("1");
     }
     @Test
     public void tc_2_addStudentInvalidName() {
@@ -134,16 +130,14 @@ public class MainApplicationTest {
     }
     @Test
     public void tc_3_addStudentValidGroup() {
-
         studentXMLRepo = new StudentXMLRepo(filenameStudent);
         temaXMLRepo = new TemaXMLRepo(filenameTema);
         notaXMLRepo = new NotaXMLRepo(filenameNota);
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
-
+        service.deleteStudent("3");
         Student s = service.addStudent("3", "name", 934, "mail");
         assert(s.getGrupa() == 934);
-        service.deleteStudent("3");
     }
     @Test
     public void tc_4_addStudentInvalidGroup() {
@@ -161,16 +155,14 @@ public class MainApplicationTest {
     }
     @Test
     public void tc_5_addStudentValidEmail() {
-
         studentXMLRepo = new StudentXMLRepo(filenameStudent);
         temaXMLRepo = new TemaXMLRepo(filenameTema);
         notaXMLRepo = new NotaXMLRepo(filenameNota);
         notaValidator = new NotaValidator(studentXMLRepo, temaXMLRepo);
         service = new Service(studentXMLRepo, studentValidator, temaXMLRepo, temaValidator, notaXMLRepo, notaValidator);
-
+        service.deleteStudent("5");
         Student s = service.addStudent("5", "name", 934, "mail");
         assert(s.getEmail().equals("mail"));
-        service.deleteStudent("5");
     }
     @Test
     public void tc_6_addStudentInvalidEmail() {
