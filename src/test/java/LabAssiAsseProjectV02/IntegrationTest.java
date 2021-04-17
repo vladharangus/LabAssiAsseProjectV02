@@ -33,30 +33,29 @@ public class IntegrationTest {
     @Test
     public void tc_1_addAssignment() {
 
-
+        service.deleteTema("2");
         Tema t = service.addTema(new Tema("2", "d1", 14, 1));
         assert(t.getDeadline() == 14);
-        //
+
     }
     @Test
     public void tc_1_addStudent() {
 
-
+        service.deleteStudent("1");
         Student s = service.addStudent("1", "name", 934, "mail");
         assert(s.getNume().equals("name"));
-       // service.deleteStudent("1");
     }
     @Test
     public void tc_1_addGrade() {
 
-
+        service.deleteNota("1");
         Nota g = new Nota("1", "1", "2", 10.0, LocalDate.now());
         try {
             double finalGrade = service.addNota(g, "feedback");
+            assert(finalGrade == 10.0);
         }catch(Exception e){
             assert(e.getMessage().equals("Studentul nu exista!"));
         }
-        //assert(finalGrade == 10.0);
     }
 
     @Test
@@ -65,9 +64,6 @@ public class IntegrationTest {
         tc_1_addAssignment();
         tc_1_addStudent();
         tc_1_addGrade();
-        service.deleteTema("2");
-        service.deleteStudent("1");
-        service.deleteNota("1");
 
     }
 
